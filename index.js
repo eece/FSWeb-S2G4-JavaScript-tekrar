@@ -94,36 +94,63 @@ console.log(CemberinAlani(15));
 /*  (oto test yok) sayilar dizisi içinde kaç adet sayı olduğunu konsola yazdırın */
 
 let ucetambolunenler,
-  enkucuk,
-  enbuyuk,
+  enkucuk = sayilar[0],
+  enbuyuk = sayilar[0],
   ucebolunenlerintoplami,
   besyuzdenkucuksayilar,
   siralisayilar,
   tekraredensayilar;
 
 // 3a çözümü
+  for (i = 0; i < sayilar.length; i++) {
+    if (sayilar[i] < enkucuk) {
+      enkucuk = sayilar[i];
+    }
+  }
 
-/* kodlar buraya */
+  for (i = 0; i < sayilar.length; i++) {
+    if (sayilar[i] > enbuyuk) {
+      enbuyuk = sayilar[i];
+    }
+  }
+console.log({ enbuyuk, enkucuk });
 
 // 3b çözümü:
 
-/* kodlar buraya */
+ucetambolunenler = [];
+sayilar.forEach((sayi) => {
+  if (sayi % 3 == 0) {
+    ucetambolunenler.push(sayi);
+  }
+});
 
 // 3c çözümü:
 
-/* kodlar buraya */
-
+ucebolunenlerintoplami = ucetambolunenler.reduce((a, b) => a + b);
+console.log({ucebolunenlerintoplami});
 // 3d çözümü
 
-/* kodlar buraya */
-
+besyuzdenkucuksayilar = sayilar.filter((sayi) => sayi < 500);
+console.log({besyuzdenkucuksayilar});
 // 3e çözümü
 
-/* kodlar buraya */
-
+siralisayilar = besyuzdenkucuksayilar.sort((a, b) => a - b);
+console.log({siralisayilar});
 // 3f çözümü
 
-/* kodlar buraya */
+const tekrarEdenSayilarObject = sayilar.reduce((a, b) => {
+  if (a[b]) {
+    a[b]++;
+  } else {
+    a[b] = 1;
+  }
+  return a;
+}, {});
+
+tekraredensayilar = Object.entries(tekrarEdenSayilarObject).filter(([sayi,tekrarSayisi]) => tekrarSayisi > 1)
+  .map(([sayi, tekrarSayisi]) => `${sayi} sayısı ${tekrarSayisi} kere tekrar edilmistir`);
+
+  console.log({tekraredensayilar});
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
