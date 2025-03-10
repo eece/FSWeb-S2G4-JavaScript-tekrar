@@ -52,6 +52,7 @@ function KareninAlani(kenaruzunlugu) {
 
 function CemberinCevresi(/* kodlar buraya */) {
   /* kodlar buraya */
+  return 2*pi*yaricap;
 }
 
 /* (Oto test yok) Yukarıdaki CemberinCevresi fonksiyonunu yarıçap = 5 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
