@@ -148,7 +148,7 @@ const tekrarEdenSayilarObject = sayilar.reduce((a, b) => {
 }, {});
 
 tekraredensayilar = Object.entries(tekrarEdenSayilarObject).filter(([sayi,tekrarSayisi]) => tekrarSayisi > 1)
-  .map(([sayi, tekrarSayisi]) => `${sayi} sayısı ${tekrarSayisi} kere tekrar edilmistir`);
+  .map(([sayi, tekrarSayisi]) => `${sayi} sayısı ${tekrarSayisi} kere tekrar edilmiştir.`);
 
   console.log({tekraredensayilar});
 
